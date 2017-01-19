@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, browserHistory, hashHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 import routes from './router';
 import Main from './components/Main';
-import './styles/index.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import { Navbar } from 'react-bootstrap';
-import '../styles/app.scss';
 
-
+// import { Navbar } from 'react-bootstrap';
+import './styles/app.scss';
 
 ReactDOM.render(
   <Router history={hashHistory}>
