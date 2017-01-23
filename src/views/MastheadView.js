@@ -9,6 +9,8 @@ class MastheadView extends Component {
           <h2>Habitual</h2>
           <button><Link to="/">Home</Link></button>
           <button><Link to="/About">About</Link></button>
+          <button><Link to="/Task">Tasks</Link></button>
+
         </div>
       </div>
     );
