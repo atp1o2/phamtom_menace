@@ -24,7 +24,7 @@ var Results = React.createClass({
   render () {
     var collection = this.state[0]
     console.log('hello from results js')
-    console.log(collection["Company"]);
+    console.log(collection);
 
     return (
       <div>

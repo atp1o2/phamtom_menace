@@ -1,6 +1,6 @@
 import Reflux from 'reflux';
 import Actions from '../actions/Actions'
-import { getCollection } from '../database/records'
+import { getCollection } from '../database/createRecords'
 
 // Task component should pick up initial states from store
 // After MongoDB: store should pick up states from db
