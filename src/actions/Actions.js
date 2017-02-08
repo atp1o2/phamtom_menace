@@ -1,7 +1,7 @@
 import Reflux from 'reflux';
 
 var Actions = Reflux.createActions(
-  ['updateTask']
+  ['loadData']
 );
 
 export default Actions;

@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ResultsView extends Component {
+var ResultsView = React.createClass({
+  handleChange (e) {
+    console.log('change state!')
+    var newState = !this.props.completed
+    this.props.onClick(newState);
+  },
 
   render () {
-    var task = this.props;
+    var record = this.props;
     return (
       <div>
         <h1>Results View</h1>
+        <p>{record.company}</p>
+        <p>{record.state}</p>
       </div>
     );
   }
-}
+})
 
 export default ResultsView;

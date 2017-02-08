@@ -1,28 +1,37 @@
 import Reflux from 'reflux';
 import Actions from '../actions/Actions'
+import { getCollection } from '../database/records'
 
 // Task component should pick up initial states from store
 // After MongoDB: store should pick up states from db
 // Store needs to update db onChange
 
-let task = {
-  description: 'learn reflux',
-  completed: false
-}
+let collection = getCollection();
 
 var Store = Reflux.createStore({
   listenables: Actions,
 
-  // this is where updating the database stuff goes
-  // state isn't persistent in localStorage atm
-  onUpdateTask (updatedTask) {
-    localStorage.setItem('task', updatedTask);
-    this.task = updatedTask;
-    this.trigger(task); // sends the updated list to all listening components (TodoApp)
+  data: {},
+
+  init () {
+    Actions.loadData()
   },
 
+  onLoadData (result) {
+    this.data = result;
+    this.trigger(this.data);
+  },
+
+  // this is where updating the database stuff goes
+  // state isn't persistent in localStorage atm
+  // onUpdateTask (data) {
+  //   localStorage.setItem('record', loadData);
+  //   this.record = data;
+  //   this.trigger(record); // sends the updated list to all listening components (TodoApp)
+  // },
+
   getDefaultData () {
-    return task;
+    return collection;
   }
 });
 
