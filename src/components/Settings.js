@@ -23,7 +23,7 @@ class Settings extends Component {
   render () {
     return (
       <div>
-        Settings
+        <SettingsView />
       </div>
     );
   }

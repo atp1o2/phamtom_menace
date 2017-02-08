@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
 
 class QueryFieldView extends Component {
-  handleChange (e) {
-    console.log('change state!')
-    var newState = !this.props.completed
-    this.props.onClick(newState);
-  },
+  // handleChange (e) {
+  //   console.log('change state!')
+  //   var newState = !this.props.completed
+  //   this.props.onClick(newState);
+  // },
 
   render () {
-    var task = this.props;
     return (
-      <div>
-        <h1>Query Field View</h1>
-        <h2>{task.description}</h2>
-        <button onClick={this.handleChange}>Complete</button>
-        <h2>{task.completed.toString()}</h2>
+      <div className="row justify-content-center">
+        <div className="col-lg-4">
+          <div className="">
+            <label className="col-form-label" for="query1">Query 1</label>
+            <input type="text" className="form-control" id="query1" placeholder="query 1" />
+          </div>
+        </div>
+
+        <div className="col-lg-4">
+          <div className="">
+            <label className="col-form-label" for="query2">Query 2</label>
+            <input type="text" className="form-control" id="query2" placeholder="query 2" />
+          </div>
+        </div>
+
+        <div className="col-lg-4">
+          <div className="">
+            <label className="col-form-label" for="query2">Query 3</label>
+            <input type="text" className="form-control" id="query2" placeholder="query 3" />
+          </div>
+        </div>
       </div>
     );
   }
