@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route } from 'react-router';
-import About from './components/About';
-import Home from './components/Home';
-import Task from './components/Task';
+import Index from './components/Index';
+import Settings from './components/Settings';
+import Contact from './components/Contact';
 
 var routes = (
   <Route>
-    <Route path="/" component={Home} />
-    <Route path="/About" component={About} />
-    <Route path="/Task" component={Task} />
+    <Route path="/" component={Index} />
+    <Route path="/Settings" component={Settings} />
+    <Route path="/Contact" component={Contact} />
   </Route>
 );
 
