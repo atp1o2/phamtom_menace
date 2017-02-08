@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Reflux from 'reflux';
 import Actions from '../actions/Actions'
-import TaskStore from '../store/TaskStore';
-import TaskView from '../views/TaskView';
+import Store from '../store/store';
+import ResultsView from '../views/ResultsView';
 
-const Task = React.createClass({
+class Results extends Component {
   mixins: [
-    Reflux.connect(TaskStore, 'task')
+    Reflux.connect(Store, 'task')
   ],
 
   getInitialState () {
-    return TaskStore.getDefaultData()
+    return Store.getDefaultData()
   },
 
   changeCompleted (newState) {
@@ -23,7 +23,7 @@ const Task = React.createClass({
   render () {
     return (
       <div>
-        <TaskView
+        <ResultsView
           onClick={this.changeCompleted}
           description={this.state.description}
           completed={this.state.completed}
@@ -31,6 +31,6 @@ const Task = React.createClass({
       </div>
     );
   }
-})
+}
 
-export default Task;
+export default Results;

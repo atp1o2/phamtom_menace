@@ -10,7 +10,7 @@ let task = {
   completed: false
 }
 
-var store = Reflux.createStore({
+var Store = Reflux.createStore({
   listenables: Actions,
 
   // this is where updating the database stuff goes
@@ -26,4 +26,4 @@ var store = Reflux.createStore({
   }
 });
 
-export default store;
+export default Store;
