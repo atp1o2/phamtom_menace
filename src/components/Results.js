@@ -1,36 +1,49 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Reflux from 'reflux';
 import Actions from '../actions/Actions'
 import Store from '../store/store';
 import ResultsView from '../views/ResultsView';
 
-class Results extends Component {
-  // mixins: [
-  //   Reflux.connect(Store, 'task')
-  // ],
+var Results = React.createClass({
+  mixins: [ Reflux.connect(Store, "collection") ],
 
-  // getInitialState () {
-  //   return Store.getDefaultData()
-  // },
+  getInitialState () {
+    return Store.getDefaultData()
+  },
 
-  // changeCompleted (newState) {
-  //   this.setState({
-  //     completed: newState
-  //   })
-  //   Actions.updateTask(this.state);
-  // },
+  formatCollection () {
+    var collection = []
+    for (var i in this.state) {
+      this.state[i].id = 10 + i;
+      collection.push(this.state[i])
+    }
+    return collection;
+  },
+
+  formatKeys () {
+    // all keys
+    // var keys = Object.keys(this.state[0]);
+
+    // desired keys
+    // var keys = ["Company", "State", "Hub", "What they do for us now", "Trucking app", "Tracking type", "FCL", "LCL", "CFS", "Air freight", "LTL", "TL", "Line haul", "FCL dispatch email", "LTL/Air dispatch email", "Quoting email", "Contact ph", "FCL rates", "LCL/AIR rates", "Other"]
+
+    // sample keys
+    return ["Company", "State", "Hub", "What they do for us now"]
+  },
 
   render () {
+    var collection = this.formatCollection();
+    var keys = this.formatKeys();
+
     return (
       <div>
         <ResultsView
-          // onClick={this.changeCompleted}
-          // description={this.state.description}
-          // completed={this.state.completed}
+          collection={collection}
+          keys={keys}
         />
       </div>
     );
   }
-}
+})
 
 export default Results;
