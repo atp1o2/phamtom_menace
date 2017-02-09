@@ -1,19 +1,51 @@
 import React from 'react';
 
 var ResultsView = React.createClass({
-  handleChange (e) {
-    console.log('change state!')
-    var newState = !this.props.completed
-    this.props.onClick(newState);
-  },
 
   render () {
-    var record = this.props;
+    var collection = this.props.collection;
+    var keys = Object.keys(collection[0]);
+    var values = []
+    for (var i in collection) {
+      values.push(Object.values(collection[i]));
+    }
+
+    const headers = keys.map((key) =>
+      <th>{key}</th>
+    )
+
+    const data = values.map((val) =>
+      <tr>
+        <td>{val}</td>
+      </tr>
+    )
+    console.log(headers)
+    console.log(data)
+
+
     return (
-      <div>
+      <div className="mb-5">
         <h1>Results View</h1>
-        <p>{record.company}</p>
-        <p>{record.state}</p>
+        <div>
+
+
+          <table>
+            <thead>
+              <tr>
+                {headers}
+              </tr>
+            </thead>
+            <tbody>
+
+              {data}
+
+            </tbody>
+          </table>
+
+
+
+
+        </div>
       </div>
     );
   }

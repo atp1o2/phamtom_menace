@@ -12,27 +12,14 @@ var Results = React.createClass({
     return Store.getDefaultData()
   },
 
-  // changeCompleted (newState) {
-  //   this.setState({
-  //     completed: newState
-  //   })
-  //   Actions.updateTask(this.state);
-  // },
-
-  // best practice for iterating over objects in react
-
+// pass the collection to the view and let it handle the iteration
   render () {
-    var collection = this.state[0]
-    console.log('hello from results js')
-    console.log(collection);
-
+    var collection = this.state
+    // console.log('hello from results js')
+    // console.log(collection);
     return (
       <div>
-        <ResultsView
-          // onClick={this.changeCompleted}
-          company={collection["Company"]}
-          state={collection["State"]}
-        />
+        <ResultsView collection={collection}/>
       </div>
     );
   }

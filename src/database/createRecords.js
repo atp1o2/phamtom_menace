@@ -19,9 +19,6 @@ function Record (data) {
   }
 }
 
-// iterate over json blob
-// create a record instance for each row
-  // var collection = JSON.parse(jsonData) ????
 function createCollection (jsonData) {
   var collection = [];
   for (var obj in jsonData) {
@@ -31,8 +28,6 @@ function createCollection (jsonData) {
 }
 
 function getCollection () {
-  console.log('getcollection function ran')
-  console.log(seed)
   return createCollection(seed);
 }
 
