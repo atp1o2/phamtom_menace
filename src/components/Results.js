@@ -14,7 +14,6 @@ var Results = React.createClass({
   formatCollection () {
     var collection = []
     for (var i in this.state) {
-      this.state[i].id = 10 + i;
       collection.push(this.state[i])
     }
     return collection;

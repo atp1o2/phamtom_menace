@@ -7,7 +7,7 @@ import './styles/app.scss';
 
 ReactDOM.render(
   <Router history={hashHistory}>
-    <Route component={Main}>
+    <Route path="/" component={Main}>
       {routes}
     </Route>
   </Router>,
