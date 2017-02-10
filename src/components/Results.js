@@ -22,13 +22,13 @@ var Results = React.createClass({
 
   formatKeys () {
     // all keys
-    // var keys = Object.keys(this.state[0]);
+    return Object.keys(this.state[0]);
 
     // desired keys
     // var keys = ["Company", "State", "Hub", "What they do for us now", "Trucking app", "Tracking type", "FCL", "LCL", "CFS", "Air freight", "LTL", "TL", "Line haul", "FCL dispatch email", "LTL/Air dispatch email", "Quoting email", "Contact ph", "FCL rates", "LCL/AIR rates", "Other"]
 
     // sample keys
-    return ["Company", "State", "Hub", "What they do for us now"]
+    // return ["Company", "State", "Hub", "What they do for us now"]
   },
 
   render () {
