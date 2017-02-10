@@ -11,6 +11,11 @@ class Index extends Component {
             <Results />
           </div>
         </div>
+        <div className="row">
+          <div className="col-12 text-center">
+            <p className="text-muted text-sm"> Powered by <a href="https://facebook.github.io/react/" title="React.io">React</a>. Created by <a href="https://github.com/atp1o2/" title="Andrew's GitHub">Atp1o2</a></p>
+          </div>
+        </div>
       </div>
     )
   };
