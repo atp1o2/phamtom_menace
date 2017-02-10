@@ -211,5 +211,8 @@ module.exports = {
     fs: 'empty',
     net: 'empty',
     tls: 'empty'
+  },
+  externals: {
+    './cptable': 'var cptable'
   }
 };
