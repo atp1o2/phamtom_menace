@@ -1,6 +1,6 @@
-import { Seed } from "./database";
+var jsonData = require('../../scripts/data.json');
 
-var seed = Seed
+var seed = jsonData;
 
 function Record (data) {
   for (var prop in data) {
@@ -8,7 +8,7 @@ function Record (data) {
   }
 }
 
-function createCollection (jsonData) {
+function createCollectionOfRecords (jsonData) {
   var collection = [];
   for (var obj in jsonData) {
     collection.push(new Record (jsonData[obj]));
@@ -17,7 +17,7 @@ function createCollection (jsonData) {
 }
 
 function getCollection () {
-  return createCollection(seed);
+  return createCollectionOfRecords(seed);
 }
 
 
