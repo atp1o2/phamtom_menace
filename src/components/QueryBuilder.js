@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import QueryFieldView from '../views/QueryFieldView';
+import QueryBuilderView from '../views/QueryBuilderView';
 
 class QueryField extends Component {
   // mixins: [
@@ -19,7 +19,7 @@ class QueryField extends Component {
 
   render () {
     return (
-      <QueryFieldView />
+      <QueryBuilderView />
     )
   };
 }
