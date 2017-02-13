@@ -19,6 +19,7 @@ var Results = React.createClass({
     return collection;
   },
 
+  // lift this method into a helper
   formatKeys () {
     // all keys
     return Object.keys(this.state[0]);

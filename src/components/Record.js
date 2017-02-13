@@ -1,13 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import RecordView from '../views/RecordView';
+import Store from '../store/store';
 
-class Record extends Component {
+var Record = React.createClass({
+  getInitialState () {
+    return {
+      paramId: this.props.params.id,
+      collection: Store.getDefaultData()
+    }
+  },
+
+  findRecordById () {
+    var record;
+    var collection = this.state.collection;
+
+    for (var i in collection) {
+      if (collection[i].id === this.state.paramId) {
+        record = collection[i];
+      }
+    }
+    return record;
+  },
 
   render () {
     return (
-      <RecordView />
-    )
-  };
-}
+      <RecordView record={ this.findRecordById() } />
+    );
+  }
+})
 
 export default Record;
