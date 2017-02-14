@@ -7,7 +7,9 @@ class MastheadView extends Component {
       <div className="masthead">
         <div className="container">
           <div className="d-inline-flex">
-            <img className="brand-logo mt-5" src="https://lh6.googleusercontent.com/9DtpY1GXXCn4VtiKDk1VqI6-xJ8P-Y29kU0E-FuEscpKZMtAhO3mNhKt-IcQpDYPDxSbXuFm92Kg1reM5ywqtIuyvzIF_g0PxxlEPfZBj8VCkoanXd_atfF5iKfIfxIACQzUWMyt"/>
+            <Link to="/">
+              <img className="brand-logo mt-5" src="https://lh6.googleusercontent.com/9DtpY1GXXCn4VtiKDk1VqI6-xJ8P-Y29kU0E-FuEscpKZMtAhO3mNhKt-IcQpDYPDxSbXuFm92Kg1reM5ywqtIuyvzIF_g0PxxlEPfZBj8VCkoanXd_atfF5iKfIfxIACQzUWMyt"/>
+            </Link>
           </div>
     {/*
           <div className="mt-5 d-inline-flex float-md-right float-sm-none">

@@ -1,4 +1,5 @@
 var jsonData = require('../../scripts/data.json');
+import $ from 'jquery';
 
 var seed = jsonData;
 
@@ -11,6 +12,7 @@ function Record (data) {
 function createCollectionOfRecords (jsonData) {
   var collection = [];
   for (var obj in jsonData) {
+    jsonData[obj].id = 0 + obj;
     collection.push(new Record (jsonData[obj]));
   }
   return collection;
@@ -19,6 +21,5 @@ function createCollectionOfRecords (jsonData) {
 function getCollection () {
   return createCollectionOfRecords(seed);
 }
-
 
 export { getCollection }
