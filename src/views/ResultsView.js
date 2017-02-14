@@ -29,6 +29,14 @@ var ResultsView = React.createClass({
       )
     };
 
+    function columnClassNameFormat(fieldValue, row, rowIdx, colIdx) {
+      // fieldValue is column value
+      // row is whole row object
+      // rowIdx is index of row
+      // colIdx is index of column
+      return fieldValue === "Y" ? 'yes-green' : 'no-red';
+    }
+
     return (
       <div className='mb-5'>
         <div className='table-responsive'>
@@ -38,7 +46,7 @@ var ResultsView = React.createClass({
               <button className='btn btn-outline-primary btn-sm'><a onClick={ this.handlerClickCleanFiltered.bind(this) } style={ { cursor: 'pointer' } }>Clear</a></button>
             </TableHeaderColumn>
 
-            <TableHeaderColumn dataField='Company' ref='Company' dataSort filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }}>Company <span className='text-sm'>&#9662;</span></TableHeaderColumn>
+            <TableHeaderColumn dataField='Company' ref='Company' dataSort filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }} width='375px'>Company <span className='text-sm'>&#9662;</span></TableHeaderColumn>
 
             <TableHeaderColumn dataField='State' className='text-center' ref='State' dataSort filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }} width='100px'>St <span className='text-sm'>&#9662;</span></TableHeaderColumn>
 
@@ -46,7 +54,7 @@ var ResultsView = React.createClass({
 
             {
               freightKeys.map((key) =>
-                <TableHeaderColumn key={key} dataField={key} className='text-center' ref={key} filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }} width='70px'>{key}</TableHeaderColumn>
+                <TableHeaderColumn key={key} dataField={key} columnClassName={ columnClassNameFormat } className='text-center' ref={key} filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }} width='70px'>{key}</TableHeaderColumn>
               )
             }
           </BootstrapTable>
