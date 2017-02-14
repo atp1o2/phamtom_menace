@@ -1,12 +1,15 @@
 import React from 'react';
 import RecordView from '../views/RecordView';
 import Store from '../store/store';
+import { allKeys } from '../services/getKeys';
+
 
 var Record = React.createClass({
   getInitialState () {
     return {
       paramId: this.props.params.id,
-      collection: Store.getDefaultData()
+      collection: Store.getDefaultData(),
+      keys: allKeys()
     }
   },
 
@@ -24,7 +27,10 @@ var Record = React.createClass({
 
   render () {
     return (
-      <RecordView record={ this.findRecordById() } />
+      <RecordView
+      record={ this.findRecordById() }
+      keys={ this.state.keys }
+      />
     );
   }
 })

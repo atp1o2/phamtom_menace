@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class RecordView extends Component {
-
-
   render () {
-  console.log(this.props.record)
+    var record = this.props.record;
+    var keys = this.props.keys;
+    var tableData = []
+
+    for (var i in keys) {
+      if (this[i] !== 0) {
+        tableData.push(
+          <tr>
+            <td key={i}><b>{keys[i]}</b></td>
+            <td>{record[keys[i]]}</td>
+          </tr>
+        );
+      }
+    }
+
     return (
       <div className="container">
-        record view
-        <p>The id is {this.props.record.id}</p>
+        <div>
+          <button className="btn btn-outline-primary my-4"><Link to="/">Back to List</Link></button>
+        </div>
+        <table className="table">
+          {tableData}
+        </table>
       </div>
     );
   }

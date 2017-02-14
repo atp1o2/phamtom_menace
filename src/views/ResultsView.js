@@ -16,8 +16,7 @@ var ResultsView = React.createClass({
 
   render () {
     var collection = this.props.collection;
-    var freightModeKeys = ['FCL', 'Air Freight', 'LTL', 'TL', 'Linehaul'];
-    // var keys = this.props.keys;
+    var freightKeys = this.props.freightKeys;
 
     const selectRow = {
       mode: 'checkbox',
@@ -41,14 +40,13 @@ var ResultsView = React.createClass({
 
             <TableHeaderColumn dataField='Company' ref='Company' dataSort filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }}>Company <span className='text-sm'>&#9662;</span></TableHeaderColumn>
 
-
-            <TableHeaderColumn dataField='State' className='text-center' ref='State' dataSort filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }} width='75px'>St <span className='text-sm'>&#9662;</span></TableHeaderColumn>
+            <TableHeaderColumn dataField='State' className='text-center' ref='State' dataSort filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }} width='100px'>St <span className='text-sm'>&#9662;</span></TableHeaderColumn>
 
             <TableHeaderColumn dataField='Hub' ref='Hub' dataSort filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }} width='200px'>HUB <span className='text-sm'>&#9662;</span></TableHeaderColumn>
 
             {
-              freightModeKeys.map((key) =>
-                <TableHeaderColumn dataField={key} className='text-center' ref={key} filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }} width='70px'>{key}</TableHeaderColumn>
+              freightKeys.map((key) =>
+                <TableHeaderColumn key={key} dataField={key} className='text-center' ref={key} filter={ { type: 'TextFilter', placeholder: '-', delay: 700 }} width='70px'>{key}</TableHeaderColumn>
               )
             }
           </BootstrapTable>
