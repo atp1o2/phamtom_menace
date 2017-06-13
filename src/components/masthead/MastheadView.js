@@ -36,20 +36,15 @@ export default class MastheadView extends Component {
     return (
       <Masthead>
         <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="/"><img src={BrandLogo} alt="CareerScope-Logo"/></a>
-            </Navbar.Brand>
-          </Navbar.Header>
           <Nav pullRight>
-            <Link to="View1" className="mobile-hide">
-              View1
-            </Link>
-            <Link to="View2" className="mobile-hide">
-              View2
-            </Link><Link to="View3" className="mobile-hide">
-              View3
-            </Link>
+            <Link to="/" className="mobile-hide">Home</Link>
+            <Link to="Blog" className="mobile-hide">Blog</Link>
+            <Link to="Panatural" className="mobile-hide">Panatural</Link>
+            <Link to="Portfolio" className="mobile-hide">Portfolio</Link>
+            <Link to="Wood" className="mobile-hide">Wood</Link>
+            <Link to="About/Me" className="mobile-hide">About/Me</Link>
+            <Link to="About/Work" className="mobile-hide">About/Work</Link>
+            <Link to="Contact" className="mobile-hide">Contact</Link>
           </Nav>
         </Navbar>
       </Masthead>

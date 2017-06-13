@@ -5,11 +5,11 @@ const ViewStyle = styled.div`
     text-align: center;
 `;
 
-export default class View1 extends Component {
+export default class Me extends Component {
   render () {
     return (
       <ViewStyle>
-        <h1>View 1</h1>
+        <h1>Me</h1>
       </ViewStyle>
     );
   }
