@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Grid, Row, Col } from 'react-bootstrap';
+import SideNav from '../components/SideNav';
+import Masthead from '../components/masthead/Masthead';
 
 const MainStyle = styled.main`
   height: 100vh;
@@ -7,18 +10,19 @@ const MainStyle = styled.main`
   padding: 5rem;
 
   .main-border {
-    border: 1px solid white;
-    height: 100%;
+    border: 1px solid #3498db;
+    border-right: none;
+    // border-radius: 15px;
+    height: 90vh;
     // background-color: rgba(185, 185, 185, 0.9);
-    background: rgba(255,255,255,1);
-    background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
-    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-    background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-    background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
-  opacity: 0.75;
+  }
+  .nav-border {
+    border: 1px solid #3498db;
+    // border-radius: 15px;
+
+    border-left: none;
+    height: 90vh;
+    // margin-top: -3rem;
 
   }
 `;
@@ -28,9 +32,20 @@ class Main extends Component {
     return (
       <div className="background-image">
         <MainStyle>
-          <div className="main-border">
-            {this.props.children}
-          </div>
+            <Row>
+              <Col xs={12} sm={12} md={10} className="main-border background-gray-gradient">
+                <Row>
+                  <Col xs={12} mdHidden lgHidden className="background-gray-gradient">
+                    <Masthead />
+                  </Col>
+                </Row>
+                {this.props.children}
+              </Col>
+              <Col sm={2} xsHidden smHidden className="nav-border background-gray-gradient">
+                <SideNav />
+              </Col>
+            </Row>
+
         </MainStyle>
       </div>
     );

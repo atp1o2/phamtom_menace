@@ -6,12 +6,16 @@ import BrandLogo from '../../img/CareerScope-Logo.png';
 
 const Masthead = styled.nav`
   height: auto;
-  width: 98%;
+  text-align: center;
   .container {
     width: 100%;
   }
   .navbar {
     box-shadow: none;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    color: black;
   }
   img {
     max-height: 45px;
@@ -36,17 +40,16 @@ export default class MastheadView extends Component {
     return (
       <Masthead>
         <Navbar>
-          <Nav pullRight>
-            <Link to="/" className="mobile-hide">Home</Link>
-            <Link to="Blog" className="mobile-hide">Blog</Link>
-            <Link to="Panatural" className="mobile-hide">Panatural</Link>
-            <Link to="Portfolio" className="mobile-hide">Portfolio</Link>
-            <Link to="Wood" className="mobile-hide">Wood</Link>
-            <Link to="About/Me" className="mobile-hide">About/Me</Link>
-            <Link to="About/Work" className="mobile-hide">About/Work</Link>
-            <Link to="Contact" className="mobile-hide">Contact</Link>
+          <Nav>
+            <li><Link to="Blog">"Saturdays with Andy"</Link></li>
+            <li><Link to="Panatural">Panatural</Link></li>
+            <li><Link to="Wood">Woodshop</Link></li>
+            <li><Link to="About/Me">Me</Link></li>
+            <li><Link to="About/Work">Work</Link></li>
+            <li><Link to="Contact">Contact</Link></li>
           </Nav>
         </Navbar>
+        <hr />
       </Masthead>
     );
   }
