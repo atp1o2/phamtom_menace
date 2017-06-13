@@ -1,15 +1,5 @@
-@font-face {
-  font-family: Raleway;
-  src: url(./fonts/Raleway/Raleway-Regular.ttf);
-}
-
-@font-face {
-  font-family: RalewayBold;
-  src: url(./fonts/Raleway/Raleway-Bold.ttf);
-}
-
 body {
-  font-family: Raleway, 'Helvetica';
+  font-family: 'Helvetica';
   font-size: 14px;
   display: flex;
   flex-direction: column;
