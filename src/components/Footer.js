@@ -37,26 +37,9 @@ class Footer extends Component {
       <Grid>
         <Row>
           <Col xs={12} sm={4}>
-              <Nav>
-                <Link to="Link">
-                  Link
-                </Link>
-                <Link to="FAQ">
-                  FAQ
-                </Link>
-              </Nav>
           </Col>
           <Col xs={12} sm={4} smPush={4}>
             <Nav>
-              <Link to="Contact">
-                Contact
-              </Link>
-              <Link to="Terms-Of-Use">
-                Terms
-              </Link>
-              <Link to="Private-Policy">
-                Privacy
-              </Link>
             </Nav>
           </Col>
           <Col xs={12} sm={4} smPull={4}>

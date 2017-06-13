@@ -1,27 +1,21 @@
 body {
   font-family: 'Helvetica';
   font-size: 14px;
-  display: flex;
-  flex-direction: column;
 }
 
-.main {
-  flex: 1;
-  min-height: 70vh;
-}
-
-a {
-  text-decoration: none;
+.background-image {
+  background-image: url("../img/background-yosemite.jpg");
+  background-color: black;
+  height: 100%;
+  /*opacity: 0.75;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 * {
   /*border: 1px solid red;*/
 }
 
-hr {
-  border-top: 1px solid #ececec;
 
-  &.yellow {
-    border-top: 1px solid #F5C600;
-  };
-}
+
