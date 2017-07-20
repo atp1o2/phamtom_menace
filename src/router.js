@@ -1,26 +1,16 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
-import Home from './views/Home/Home.jsx'
-import Blog from './views/Blog/Blog.jsx'
-import Contact from './views/Contact/Contact.jsx'
-import Me from './views/Me/Me.jsx'
-import Panatural from './views/Panatural/Panatural.jsx'
-import Portfolio from './views/Portfolio/Portfolio.jsx'
-import Wood from './views/Wood/Wood.jsx'
-import Work from './views/Work/Work.jsx'
+
+import View1 from './views/View1/View1.jsx'
+import View2 from './views/View2/View2.jsx'
+import View3 from './views/View3/View3.jsx'
 
 var routes = (
   <Route>
-    <IndexRoute component={Home} />
-    <Route path="Blog" component={Blog} />
-    <Route path="Contact" component={Contact} />
-    <Route path="Panatural" component={Panatural} />
-    <Route path="Portfolio" component={Portfolio} />
-    <Route path="Wood" component={Wood} />
-    <Route path="About/">
-      <Route path="Me" component={Me} />
-      <Route path="Work" component={Work} />
-    </Route>
+    <IndexRoute component={View1} />
+    <Route path="View1" component={View1} />
+    <Route path="View2" component={View2} />
+    <Route path="View3" component={View3} />
   </Route>
 );
 

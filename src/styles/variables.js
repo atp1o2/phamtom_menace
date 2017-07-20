@@ -4,7 +4,6 @@ const Brand = {
   grey: "#697489",
   white: "#FFFFFF",
   greyBorder: "1px solid #ececec"
-
 };
 
 export default Brand ;

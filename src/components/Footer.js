@@ -37,12 +37,19 @@ class Footer extends Component {
       <Grid>
         <Row>
           <Col xs={12} sm={4}>
+              <Nav>
+                <Link to="Link">Link</Link>
+                <Link to="FAQ">FAQ</Link>
+              </Nav>
           </Col>
-          <Col xs={12} sm={4} smPush={4}>
+          <Col xs={12} sm={4} className="push-sm-4">
             <Nav>
+              <Link to="Contact">Contact</Link>
+              <Link to="Terms-Of-Use">Terms</Link>
+              <Link to="Private-Policy">Privacy</Link>
             </Nav>
           </Col>
-          <Col xs={12} sm={4} smPull={4}>
+          <Col xs={12} sm={4} className="pull-sm-4">
             <Link to="/"><img src={FacebookIcon} alt="Facebook"/></Link>
             <Link to="/"><img src={TwitterIcon} alt="Twitter"/></Link>
             <p>©Copyright 2017 ATP</p>
